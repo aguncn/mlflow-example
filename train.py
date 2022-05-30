@@ -15,6 +15,11 @@ from sklearn.linear_model import ElasticNet
 import mlflow
 import mlflow.sklearn
 
+mlflow.set_experiment("Default")
+mlflow.set_tracking_uri('http://192.168.1.111:5000')
+os.environ["AWS_ACCESS_KEY_ID"] = "admin"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "adminadmin"
+os.environ["MLFLOW_S3_ENDPOINT_URL"] = "http://192.168.1.111:9000"
 
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
