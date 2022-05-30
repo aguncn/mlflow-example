@@ -2,11 +2,12 @@ import os
 import mlflow
 from mlflow import log_metric, log_param, log_artifact
 
-os.environ["AWS_ACCESS_KEY_ID"] = "admin"
-os.environ["AWS_SECRET_ACCESS_KEY"] = "adminadmin"
-os.environ["MLFLOW_S3_ENDPOINT_URL"] = "http://192.168.1.111:9000"
+
 
 if __name__ == '__main__':
+    os.environ["AWS_ACCESS_KEY_ID"] = "admin"
+    os.environ["AWS_SECRET_ACCESS_KEY"] = "adminadmin"
+    os.environ["MLFLOW_S3_ENDPOINT_URL"] = "http://192.168.1.111:9000"
     mlflow.set_experiment("Default")
     mlflow.set_tracking_uri('http://192.168.1.111:5000')
 
